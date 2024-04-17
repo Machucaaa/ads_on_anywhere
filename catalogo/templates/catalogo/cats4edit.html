@@ -1,0 +1,39 @@
+{% extends "usuarios/layouts/main.html" %}  
+
+{% block content %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> Categorias</h1>
+                <hr>
+                <div class="row">
+                    {% for item in categorias  %}
+                        <div class="col-md-3">
+                            <div class="card">
+                                <a href="{% url 'edit_categoria' item.slug %}">
+                                    <div class="card-body custom-card">
+                                        <div class="category-image">
+                                            <img src="{{ item.image.url }}" alt="Categoria img" class="w-100"/>
+                                        </div>
+                                        <h4 class="text-center">{{ item.nombre_categoria }}</h4>
+                                        {% if item.esta_activa %}
+                                        <label for="">Activa <i class="fa fa-check"></i></label>
+                                        {% else %}
+                                        <label for="">Inactiva <i class="fa fa-ban"></i></label>               
+                                        {% endif%}                                                                
+
+                                    </div>
+                                </a>
+                            </div>
+                                
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

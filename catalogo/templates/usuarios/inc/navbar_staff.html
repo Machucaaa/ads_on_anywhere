@@ -1,0 +1,52 @@
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+    <form action="{% url 'searchproduct' %}", method="POST">
+      {% csrf_token %}
+      <div class="search-bar">
+        <div class="input-group">
+          <input type="search" required class="form-control" name="productsearch" id="searchproducts" placeholder="buscar producto">
+          <button type="submit" class="input-group-text" id="botonbusqueda"> <i class="fa fa-search"> </i> </button>
+        </div>
+      </div>
+    </form>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href= {% url "categorias_a_editar" %}>Editar Categoria</a>
+          </li>    
+
+          <li class="nav-item">
+            <a class="nav-link" href= {% url "altascategoria" %}>Nueva Categoria</a>
+          </li>    
+
+          <li class="nav-item">
+            <a class="nav-link" href= {% url "cats4prods_a_editar" %}>Editar Producto</a>
+          </li>    
+
+          <li class="nav-item">
+              <a class="nav-link" href="{% url "altasproductos" %}">Nuevo Producto</a>
+            </li>
+            
+          {% if request.user.is_authenticated %}
+            <li class="nav-item">
+               <a class="nav-link" href= {% url "logout" %}>  {{request.user}} Salir</a>
+            </li>          
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ingresar</a>
+            </li>          
+          
+          {% endif %}
+
+        </ul>
+      </div>
+    </div>
+  </nav>

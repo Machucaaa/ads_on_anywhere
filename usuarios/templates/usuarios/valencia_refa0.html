@@ -1,0 +1,39 @@
+{% extends "catalogo/layouts/main.html" %}    
+
+$("#send_button_id").click(function() {
+    alert("Button code executed.");
+  });
+ 
+
+{% block content %} 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="">
+                <div class="card mt-3 shadow">
+                    <div class="card-body">
+
+    <form action="", method="POST">
+        {% csrf_token %} 
+    
+        <div class="form-group">
+
+            <input type="text" class="form-control" name="username" value="valencia" hidden placeholder="Valencia Refa">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" value="encia1234" hidden placeholder="Password?">
+
+        </div>
+        <button type="submit" id="send_button_id" class="btn float-end shadow btn-success px-4"> Consultar </button>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock content %}
+
+
+{% block scripts %}
+{% endblock scripts %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <titl>Valencia Refa</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script>
+            document.addEventListener('DOMContentLoaded',function(){
+                document.getElementById("send_button_id").click();
+            });
+        </script>
+
+
+
+    </head>
+    <body>
+
+        <h1></h1>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="">
+                        <div class="card mt-3 shadow">
+                            <div class="card-body">
+        
+            <form action="", method="POST">
+                {% csrf_token %} 
+            
+                <div class="form-group">
+        
+                    <input type="text" class="form-control" name="username" value="valencia" hidden placeholder="Valencia Refa">
+                </div>
+                <button type="submit" id="send_button_id" hidden class="btn float-end shadow btn-success px-4"> Consultar </button>
+            </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+    </body>
+</html>
+
+

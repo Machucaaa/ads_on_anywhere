@@ -1,0 +1,11 @@
+{% extends "usuarios/layouts/main.html" %}     
+
+{% block content %}
+
+<form method="POST", action="{% url 'altascategoria' %}", enctype="multipart/form-data">
+ {% csrf_token %}
+    {{ form }} 
+<button> Guardar </button>
+</form>
+
+{% endblock content %}

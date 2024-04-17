@@ -1,0 +1,31 @@
+{% extends "usuarios/layouts/main.html" %}    
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="">
+                <div class="card mt-3 shadow">
+                    <div class="card-body">
+
+    <form action="", method="POST">
+        {% csrf_token %} 
+        <h2> Login </h2>
+        <div class="form-group">
+            <label for=""> Nombre de Usuario: </label>
+            <input type="text" class="form-control" name="username" placeholder="Nombre de usuario?">
+        </div>
+        <div class="form-group">
+            <label for=""> Password: </label>
+            <input type="password" class="form-control" name="password" placeholder="Password?">
+
+        </div>
+        <button type="submit" class="btn float-end shadow btn-success px-4"> Ingresar </button>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock content %}
